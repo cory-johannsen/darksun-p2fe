@@ -1,0 +1,109 @@
+{
+  "entities": [
+    {
+      "name": "Athasian Dwarf",
+      "slug": "athasian-dwarf",
+      "aliases": ["Dwarves", "Dwarf"],
+      "heading": "Dwarves",
+      "size": "medium",
+      "hit_points": 10,
+      "speed": 20,
+      "ability_mods": {"str": 1, "con": 2, "dex": -1, "cha": -2},
+      "languages": ["Athasian", "Dwarven"],
+      "traits": ["dwarf", "humanoid", "dark-sun"],
+      "notes": "Work-obsessed dwarves with innate focus."
+    },
+    {
+      "name": "Athasian Elf",
+      "slug": "athasian-elf",
+      "aliases": ["Elves", "Elf"],
+      "heading": "Elves",
+      "size": "medium",
+      "hit_points": 8,
+      "speed": 30,
+      "ability_mods": {"dex": 2, "int": 1, "wis": -1, "con": -2},
+      "languages": ["Athasian", "Elven"],
+      "traits": ["elf", "humanoid", "dark-sun"],
+      "notes": "Nomadic desert runners and traders."
+    },
+    {
+      "name": "Athasian Half-Elf",
+      "slug": "athasian-half-elf",
+      "aliases": ["Half-elves", "Half-Elf"],
+      "heading": "Half-elves",
+      "size": "medium",
+      "hit_points": 8,
+      "speed": 25,
+      "ability_mods": {"dex": 1, "con": -1},
+      "languages": ["Athasian"],
+      "traits": ["half-elf", "humanoid", "dark-sun"],
+      "notes": "Self-reliant wanderers born of intolerance."
+    },
+    {
+      "name": "Half-Giant",
+      "slug": "half-giant",
+      "aliases": ["Half-giants", "Half-Giant"],
+      "heading": "Half-giants",
+      "size": "large",
+      "hit_points": 14,
+      "speed": 25,
+      "ability_mods": {"str": 4, "con": 2, "int": -2, "wis": -2, "cha": -2},
+      "languages": ["Athasian", "Giant"],
+      "traits": ["giant", "humanoid", "dark-sun"],
+      "notes": "Massive mercenaries influenced by peers."
+    },
+    {
+      "name": "Athasian Halfling",
+      "slug": "athasian-halfling",
+      "aliases": ["Halflings", "Halfling"],
+      "heading": "Halflings",
+      "size": "small",
+      "hit_points": 6,
+      "speed": 25,
+      "ability_mods": {"dex": 2, "wis": 2, "con": -1, "cha": -1, "str": -2},
+      "languages": ["Athasian", "Halfling"],
+      "traits": ["halfling", "humanoid", "dark-sun"],
+      "notes": "Reclusive jungle dwellers with primal customs."
+    },
+    {
+      "name": "Athasian Human",
+      "slug": "athasian-human",
+      "aliases": ["Humans", "Human"],
+      "heading": "Human",
+      "size": "medium",
+      "hit_points": 8,
+      "speed": 25,
+      "ability_mods": {},
+      "languages": ["Athasian"],
+      "traits": ["human", "humanoid", "dark-sun"],
+      "notes": "Versatile survivors shaped by harsh city-states."
+    },
+    {
+      "name": "Mul",
+      "slug": "mul",
+      "aliases": ["Muls", "Mul"],
+      "heading": "Mul",
+      "size": "medium",
+      "hit_points": 12,
+      "speed": 25,
+      "ability_mods": {"str": 2, "con": 1, "int": -1, "cha": -2},
+      "languages": ["Athasian"],
+      "traits": ["mul", "humanoid", "dark-sun"],
+      "notes": "Bred for labor, resilient and tireless."
+    },
+    {
+      "name": "Thri-Kreen",
+      "slug": "thri-kreen",
+      "aliases": ["Thri-kreen"],
+      "heading": "Thri-kreen",
+      "size": "medium",
+      "hit_points": 10,
+      "speed": 30,
+      "ability_mods": {"dex": 2, "wis": 1, "int": -1, "cha": -2},
+      "languages": ["Thri-Kreen"],
+      "traits": ["thri-kreen", "humanoid", "dark-sun"],
+      "notes": "Mantis-folk hunters with pack instincts."
+    }
+  ]
+}
+

@@ -1,0 +1,9 @@
+[
+  {
+    "slug": "chapter-two-player-character-races",
+    "transformer": "ancestries",
+    "mapping": "ancestries.json",
+    "output": "ancestries.json"
+  }
+]
+
