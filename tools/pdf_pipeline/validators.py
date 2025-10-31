@@ -43,3 +43,30 @@ def validate_ancestries(processed_path: Path) -> List[str]:
             issues.append(f"{name}: no languages mapped")
 
     return issues
+
+
+def validate_journals(processed_dir: Path) -> List[str]:
+    """Ensure each processed journal entry has content and a title."""
+
+    issues: List[str] = []
+    if not processed_dir.exists():
+        issues.append(f"journal directory missing: {processed_dir}")
+        return issues
+
+    files = sorted(processed_dir.glob("*.json"))
+    if not files:
+        issues.append("no journal entries generated")
+        return issues
+
+    for journal_file in files:
+        payload = _load_json(journal_file)
+        data = payload.get("data", {})
+        title = data.get("title") or payload.get("slug") or journal_file.stem
+        content = data.get("content", "").strip()
+
+        if not title:
+            issues.append(f"{journal_file.name}: missing title")
+        if len(content) < 40:
+            issues.append(f"{journal_file.name}: content too short")
+
+    return issues

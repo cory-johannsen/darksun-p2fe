@@ -1,0 +1,21 @@
+{
+  "slug": "chapter-one-ability-scores",
+  "transformer": "journal",
+  "source_section": "Chapter One: Ability Scores",
+  "data": {
+    "entity_type": "journal",
+    "slug": "chapter-one-ability-scores",
+    "title": "Chapter One: Ability Scores",
+    "content": "<p>Optional Methods\nRolling Ability Scores\nThe Ability Scores\nWisdom: Templars, a player character class of\nbureaucratic priests, receive their spells through\ntheir sorcerer-king. If a templar falls from favor with\nhis sorcerer-king, all of his spells can be lost, including those granted for having a higher Wisdom\nscore.\nIntelligence: The DARK SUN  campaign setting assumes the use of both the weapon and nonweapon proficiency rules. Thus, the number of\nlanguages a player character can speak is strictly\ngoverned by proficiencies. Because of this, the number of languages column on the Intelligence table in\nthe Players Handbook translates directly into additional proficiency slots. These additional slots need\nnot be used for new languages; they can be used for\nany nonweapon proficiency.\nRoll 5d4 six times, once for each ability score, in\norder. The totals rolled are written down as\nrolled.\nRoll 4d4+4 six times, once for each ability score,\nin order. The totals rolled are written down as\nrolled.\nWhen rolling ability scores for player and nonplayer characters, use these methods:\nThe six ability scores govern a player characters\ninteraction with the world of Athas just as described\nin the Players Handbook, with these exceptions:\nThe six ability scores are determined randomly by\nrolling dice to obtain a score from 5 to 20. These\nnumbers are, on the average, higher than those for\ncharacters in other campaign worlds. There is a very\ngood reason for this: the world of Athas is brutal\nand unforgiving. It is a savage world with frightful\nchallenges beyond every dune. Athas is not a world\nfor the weak or the simple-mindedthose who cannot adapt, who cannot meet every challenge with\nconfidence in their skills and abilities simply wont\nsurvive. The world of Athas has produced races of\nbeings that are generally superiorof greater\nstrength and endurance, capable of greater intellect\nand vision-to those who inhabit other campaign\nworlds.\nOptional Method V: Each ability score starts with\na score of 10. The player then rolls 10d4. These\ndice can be added to the characters abilities as desired (with some restrictions.) All of the points on a\ndie must be added to the same ability score and no\nability score can exceed 20 points.\nEvery Dark Sun character has the same six ability\nscores used in the AD&D® game: Strength, Dexterity, Constitution, Intelligence, Wisdom, and\nCharisma. However, the manner by which these are\ndetermined is quite different.\nThe following optional methods may also be used\nfor player or non-player character generation, if the\nDM so chooses.\nOptional Method I: Roll 5d4 twice for each ability score, keeping the higher of the rolls.\nOptional Method II: Roll 5d4 six times and assign the rolls to the ability scores as desired.\nOptional Method III: Roll 5d4 twelve times and\nassign the six best rolls as desired.\nOptional Method IV: Roll 6d4, discarding the\nlowest die, six times. Assign the six totals to the ability scores as desired.\nRolling Player Character Ability Scores\nRolling Non-player Character Ability Scores\n2</p>",
+    "source_pages": [
+      4,
+      4
+    ],
+    "metadata": {
+      "parent_slugs": [
+        "table-of-contents-rules-book"
+      ],
+      "level": 2
+    }
+  }
+}

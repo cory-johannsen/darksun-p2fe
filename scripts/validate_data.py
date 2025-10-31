@@ -21,16 +21,24 @@ def parse_args() -> argparse.Namespace:
         default=Path("data/processed/ancestries.json"),
         help="Path to the processed ancestry dataset.",
     )
+    parser.add_argument(
+        "--journals-dir",
+        type=Path,
+        default=Path("data/processed/journals"),
+        help="Directory containing processed journal entries.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     _add_repo_path()
 
-    from tools.pdf_pipeline.validators import validate_ancestries
+    from tools.pdf_pipeline.validators import validate_ancestries, validate_journals
 
     args = parse_args()
-    issues = validate_ancestries(args.ancestries)
+    issues = []
+    issues.extend(validate_ancestries(args.ancestries))
+    issues.extend(validate_journals(args.journals_dir))
     if issues:
         print("Validation issues detected:")
         for issue in issues:

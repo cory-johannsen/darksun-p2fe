@@ -22,6 +22,12 @@ def parse_args() -> argparse.Namespace:
         help="Processed ancestry dataset to convert.",
     )
     parser.add_argument(
+        "--journals-dir",
+        type=Path,
+        default=Path("data/processed/journals"),
+        help="Directory containing processed journal JSON files.",
+    )
+    parser.add_argument(
         "--output-dir",
         type=Path,
         default=Path("packs"),
@@ -33,11 +39,19 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     _add_repo_path()
 
-    from tools.pdf_pipeline import build_ancestry_pack
+    from tools.pdf_pipeline import build_ancestry_pack, build_journal_pack
 
     args = parse_args()
-    output_path = args.output_dir / "dark-sun-ancestries.db"
-    build_ancestry_pack(args.ancestries, output_path)
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+
+    ancestry_output = args.output_dir / "dark-sun-ancestries.db"
+    build_ancestry_pack(args.ancestries, ancestry_output)
+
+    if args.journals_dir.exists():
+        journal_output = args.output_dir / "dark-sun-rules.db"
+        build_journal_pack(args.journals_dir, journal_output)
+    else:
+        print(f"Warning: Journal directory {args.journals_dir} does not exist; skipping journal pack.")
 
 
 if __name__ == "__main__":

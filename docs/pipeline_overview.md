@@ -27,7 +27,7 @@ This repository now contains an end-to-end pipeline that ingests the original Da
    ```bash
    python scripts/build_compendia.py
    ```
-   - Generates `packs/dark-sun-ancestries.db` containing PF2E ancestry entries ready for import.
+   - Generates `packs/dark-sun-ancestries.db` (PF2E ancestry items) and `packs/dark-sun-rules.db` (journal entries that mirror the source text).
 
 4. **Run QA Checks**
    ```bash
@@ -47,10 +47,5 @@ This repository now contains an end-to-end pipeline that ingests the original Da
 - Import `packs/dark-sun-ancestries.db` into a Foundry sandbox world and verify:
   - Ability boosts/flaws, HP, size, speeds, and traits align with Dark Sun lore.
   - Descriptions render correctly and do not include table artefacts that should be templated elsewhere.
-- Re-run `scripts/validate_data.py` after any manual edits to mappings or processed data.
-
-## Future TODOs
-- Implement transformers for spells, psionics, equipment, and monsters (supports `entity_type` specific logic and Foundry exporters).
-- Layer mechanical conversion rules (e.g., defiler/preserver spell taxonomy, Athasian psionics to PF2E focus spells, environmental hazards).
-- Introduce pytest-based unit tests to keep regression coverage as more entity types are added.
-
+- Import `packs/dark-sun-rules.db` and review a sample of journal pages to confirm formatting and coverage match the source chapters.
+- Re-run `scripts/validate_data.py`

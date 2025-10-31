@@ -2,12 +2,13 @@
 
 from .manifest import generate_manifest, load_manifest
 from .extract import extract_sections
-from .compendium import build_ancestry_pack
+from .compendium import build_ancestry_pack, build_journal_pack
 
 __all__ = [
     "generate_manifest",
     "load_manifest",
     "extract_sections",
     "build_ancestry_pack",
+    "build_journal_pack",
 ]
 

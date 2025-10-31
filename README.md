@@ -33,3 +33,11 @@ pip install -r requirements.txt
    ```
 
 See `docs/pipeline_overview.md` for full details, mapping guidelines, and QA steps.
+
+## Foundry VTT Module
+
+- Manifest: `module.json`
+- Minimum Foundry version: 13 (PF2E system 5.0.0 or newer).
+- Compendium packs shipped in `packs/` (currently: `Dark Sun Ancestries`, `Dark Sun Rules`).
+
+To install manually, copy the repository into your Foundry `Data/modules/` folder (or host the repo and supply the manifest URL). Enable the module in a Pathfinder 2E world to access the compendium content.

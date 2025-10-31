@@ -45,10 +45,14 @@ def _build_flaws(flaws: List[str]) -> dict:
     return {str(idx): {"value": [flaw]} for idx, flaw in enumerate(flaws)}
 
 
+def _read_processed(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def build_ancestry_pack(processed_path: Path, output_path: Path) -> Path:
     """Create a Foundry-ready ancestry pack from processed ancestry data."""
 
-    processed = json.loads(processed_path.read_text(encoding="utf-8"))
+    processed = _read_processed(processed_path)
     entities = processed.get("data", {}).get("entities", [])
 
     entries = []
@@ -88,6 +92,59 @@ def build_ancestry_pack(processed_path: Path, output_path: Path) -> Path:
             "flags": {},
             "source": {"value": entity.get("source_section", "Dark Sun")},
         }
+        entries.append(entry)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        "\n".join(json.dumps(entry, ensure_ascii=False) for entry in entries),
+        encoding="utf-8",
+    )
+    return output_path
+
+
+def build_journal_pack(processed_dir: Path, output_path: Path) -> Path:
+    """Create a journal compendium that mirrors the extracted source material."""
+
+    processed_files = sorted(processed_dir.glob("*.json"))
+    entries = []
+    sort = 1000
+    for processed_file in processed_files:
+        processed = _read_processed(processed_file)
+        data = processed.get("data", {})
+        title = data.get("title") or processed.get("source_section") or processed.get("slug")
+        if not title:
+            continue
+        content = data.get("content", "")
+
+        page_id = uuid.uuid4().hex
+        entry = {
+            "_id": uuid.uuid4().hex,
+            "name": title,
+            "type": "JournalEntry",
+            "flags": {
+                "darksun-pf2e": {
+                    "slug": processed.get("slug"),
+                    "source_pages": data.get("source_pages"),
+                }
+            },
+            "ownership": {},
+            "pages": [
+                {
+                    "_id": page_id,
+                    "name": title,
+                    "type": "text",
+                    "text": {
+                        "format": 1,
+                        "content": content,
+                    },
+                    "title": {"show": False},
+                    "image": {"displayMode": 0},
+                    "sort": sort,
+                }
+            ],
+            "sort": sort,
+        }
+        sort += 1000
         entries.append(entry)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)

@@ -4,6 +4,14 @@
     "transformer": "ancestries",
     "mapping": "ancestries.json",
     "output": "ancestries.json"
+  },
+  {
+    "glob": "*.json",
+    "transformer": "journal",
+    "output_dir": "journals",
+    "skip_slugs": [
+      "chapter-two-player-character-races"
+    ]
   }
 ]
 
